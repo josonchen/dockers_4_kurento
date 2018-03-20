@@ -1,5 +1,7 @@
+# original inited,clone from zolochevska/turn-server,then modi by joson
 FROM ubuntu:16.04
-MAINTAINER Anastasia Zolochevska <anastasiia.zolochevska@gmail.com>
+MAINTAINER joson chen <josonchen@sina.com>
+ENV REFRESHED_AT 20180320
 
 # Set the working directory to /app
 WORKDIR /app
@@ -9,7 +11,7 @@ ADD . /app
 
 EXPOSE 3478
 
-RUN apt-get update && apt-get install -y \
+RUN apt-get -yqq update && apt-get install -y \
     dnsutils \
     coturn \
   && rm -rf /var/lib/apt/lists/*
