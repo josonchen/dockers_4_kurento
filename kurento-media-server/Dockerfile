@@ -19,7 +19,7 @@ WORKDIR /app
 
 ADD . /app
 
-HEALTHCHECK --start-period=15s --interval=30s --timeout=3s --retries=1 CMD /healthchecker.sh
+# HEALTHCHECK --start-period=15s --interval=30s --timeout=3s --retries=1 CMD /healthchecker.sh
 
 
 ENTRYPOINT ["bash", "deploy-kms.sh"]    
