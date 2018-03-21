@@ -1,4 +1,4 @@
-FROM joson/kms670
+FROM joson/kms670:built
 MAINTAINER joson chen <josonchen@sina.com>
 ENV REFRESHED_AT 20180321
 
