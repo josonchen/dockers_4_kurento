@@ -11,7 +11,7 @@ ENV REFRESHED_AT 20180321
 
 RUN apt-get -yqq update  && \
     apt-get clean && \
-    && rm -rf /var/lib/apt/lists/*
+    rm -rf /var/lib/apt/lists/*
 
 EXPOSE 8888 
 
