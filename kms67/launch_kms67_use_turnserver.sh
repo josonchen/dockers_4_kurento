@@ -1,3 +1,5 @@
+#launch_kms67_use_turnserver.sh
+# can process with or without parameter
 if [ $# -ge 3 ] ; then 
 	echo $1
 	echo $2
