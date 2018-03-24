@@ -62,7 +62,7 @@ RUN apt-get -yqq update  && apt-get install -qqy   \
 
 #install the debugging symbols if you will be using a debugger to troubleshoot bugs in KMS
 
-RUN apt-get -yqq update  && apt-get install \
+RUN apt-get -yqq update  && apt-get -yqq install \
   libglib2.0-0-dbg \
   libssl1.0.0-dbg \
   gstreamer1.5-plugins-base-dbg \
