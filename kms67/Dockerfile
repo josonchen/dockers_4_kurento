@@ -9,7 +9,7 @@ RUN apt-key adv --keyserver keyserver.ubuntu.com --recv-keys 5AFA7A83
 
 ADD  kurento.list /etc/apt/sources.list.d/kurento.list
 
-RUN apt-get -yqq && apt-get install -qqy   \
+RUN apt-get -yqq update  && apt-get install -qqy   \
   build-essential \
   cmake \
   debhelper \

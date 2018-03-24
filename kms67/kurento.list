@@ -1,3 +1,2 @@
 # Kurento Media Server - Pre-Release packages
 deb [arch=amd64] http://ubuntu.openvidu.io/dev xenial kms6
-EOF
