@@ -109,9 +109,13 @@ RUN /bin/bash /app/build_kms67.sh
 
 COPY ./launch_kms67.sh /app/launch_kms67.sh
 RUN chmod +x /app/launch_kms67.sh
-
 # RUN /bin/bash /app/launch_kms67.sh
-# ENTRYPOINT ["bash", "/app/launch_kms67_use_turnserver.sh"]  
 
-ENTRYPOINT ["bash", "/app/launch_kms67.sh"]  
+COPY ./launch_kms67_use_turnserver.sh /app/launch_kms67_use_turnserver.sh
+RUN chmod +x /app/launch_kms67_use_turnserver.sh
+# RUN /bin/bash /app/launch_kms67_use_turnserver.sh
+# RUN /bin/bash /app/launch_kms67_use_turnserver.sh 167.99.120.219 3478 uzszezr001:pYaZsCs9wToSrUd@167.99.120.219:3478
+
+ENTRYPOINT ["bash", "/app/launch_kms67_use_turnserver.sh"]  
+# ENTRYPOINT ["bash", "/app/launch_kms67.sh"]  
 
