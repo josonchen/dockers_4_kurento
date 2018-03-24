@@ -6,7 +6,7 @@ ENV REFRESHED_AT 20180325
 
 RUN apt-get -yqq update
 
-RUN apt-get -yqq install  default-jdk maven 
+RUN apt-get -yqq install  git default-jdk maven 
 
 RUN mkdir /app/web_apps/mirror
 WORKDIR /app/web_apps/mirror
@@ -19,6 +19,7 @@ EXPOSE 8443
 WORKDIR  /app/web_apps/kurento-tutorial-java/kurento-magic-mirror
 ENTRYPOINT ["mvn", "compile", "exec:java"]
 
+# cd /app/web_apps/kurento-tutorial-java/kurento-magic-mirror
 #  mvn compile exec:java  -Dkms.url=ws://167.99.63.103:8888/kurento -Dapp.server.url=https://167.99.63.103:8443
 #  docker run -d -p 8443:8443 --name mirror --restart=always joson/magic-mirror -Dkms.url=ws://167.99.63.103:8888/kurento -Dapp.server.url=https://167.99.63.103:8443
 
