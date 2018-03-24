@@ -8,11 +8,11 @@ RUN apt-get -yqq update
 
 RUN apt-get -yqq install  git default-jdk maven 
 
-RUN mkdir /app/web_apps/mirror
-WORKDIR /app/web_apps/mirror
+RUN mkdir -p /app/web_apps/mirror
+WORKDIR      /app/web_apps/mirror
 
 COPY ./build_mirror.sh /app/web_apps/mirror/build_mirror.sh
-RUN chmod +x /app/web_apps/mirror/build_mirror.sh
+RUN chmod +x  /app/web_apps/mirror/build_mirror.sh
 RUN /bin/bash /app/web_apps/mirror/build_mirror.sh
 
 EXPOSE 8443 
