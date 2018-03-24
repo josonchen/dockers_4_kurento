@@ -2,6 +2,9 @@ FROM ubuntu:16.04
 MAINTAINER joson chen <josonchen@sina.com>
 ENV REFRESHED_AT 20180324
 
+
+#sudo docker pull registry.cn-hangzhou.aliyuncs.com/joson/kms67
+
 RUN apt-get -yqq update
 ENV DISTRO xenial 
 
@@ -81,3 +84,9 @@ RUN apt-get -yqq update  && apt-get install \
   kms-crowddetector-dbg \
   kms-platedetector-dbg \
   kms-pointerdetector-dbg 
+
+COPY ./build_kms67.sh /build_kms67.sh
+RUN chmod +x /build_kms67.sh
+RUN /build_kms67.sh
+
+
