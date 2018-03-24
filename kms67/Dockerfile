@@ -116,6 +116,12 @@ RUN chmod +x /app/launch_kms67_use_turnserver.sh
 # RUN /bin/bash /app/launch_kms67_use_turnserver.sh
 # RUN /bin/bash /app/launch_kms67_use_turnserver.sh 167.99.120.219 3478 uzszezr001:pYaZsCs9wToSrUd@167.99.120.219:3478
 
+#COPY ./gen_debian_packages.sh /app/gen_debian_packages.sh
+#RUN chmod +x /app/gen_debian_packages.sh
+#RUN /bin/bash /app/gen_debian_packages.sh
+
+
+
 ENTRYPOINT ["bash", "/app/launch_kms67_use_turnserver.sh"]  
 # ENTRYPOINT ["bash", "/app/launch_kms67.sh"]  
 
