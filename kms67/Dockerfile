@@ -6,7 +6,8 @@ ENV REFRESHED_AT 20180324
 #sudo docker pull registry.cn-hangzhou.aliyuncs.com/joson/kms67
 
 RUN apt-get -yqq update
-ENV DISTRO xenial 
+
+
 
 RUN apt-key adv --keyserver keyserver.ubuntu.com --recv-keys 5AFA7A83
 
@@ -85,8 +86,15 @@ RUN apt-get -yqq update  && apt-get -yqq install \
   kms-platedetector-dbg \
   kms-pointerdetector-dbg 
 
-COPY ./build_kms67.sh /build_kms67.sh
-RUN chmod +x /build_kms67.sh
+RUN mkdir /app
+WORKDIR /app
+
+COPY ./build_kms67.sh /app/build_kms67.sh
+RUN chmod +x /app/build_kms67.sh
 RUN /build_kms67.sh
+
+COPY ./launch_kms67.sh /app/launch_kms67.sh
+RUN chmod +x /app/launch_kms67.sh
+RUN /app/launch_kms67.sh
 
 

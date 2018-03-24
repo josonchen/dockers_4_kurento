@@ -1,3 +1,5 @@
+cd /app
+
 git clone https://github.com/Kurento/kms-omni-build.git \
   && cd kms-omni-build \
   && git submodule init \
