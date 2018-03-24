@@ -8,6 +8,6 @@ cd /app/web_apps/kurento-tutorial-java/kurento-magic-mirror
 
 git checkout 6.7.1
 
-mvn compile exec:java
+mvn compile 
 
 # mvn compile exec:java
