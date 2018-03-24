@@ -5,10 +5,12 @@ git clone https://github.com/Kurento/kms-omni-build.git \
   && git submodule init \
   && git submodule update --recursive --remote
 
+cd /app/kms-omni-build
 REF=master
 for d in $(find . -maxdepth 1 -mindepth 1 -type d)
 do pushd $d ; git checkout "$REF" ; popd ; done
 
+cd /app/kms-omni-build
 TYPE=Debug
 mkdir build-$TYPE \
   && cd build-$TYPE \
