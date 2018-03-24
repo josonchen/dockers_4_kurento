@@ -89,13 +89,22 @@ RUN apt-get -yqq update  && apt-get -yqq install \
 RUN mkdir /app
 WORKDIR /app
 
+
+#above is install_development_packages_kms67
+#COPY ./install_development_packages_kms67.sh /app/install_development_packages_kms67.sh
+#RUN chmod +x /app/install_development_packages_kms67.sh
+#RUN /bin/bash /app/install_development_packages_kms67.sh
+
 COPY ./build_kms67.sh /app/build_kms67.sh
 RUN chmod +x /app/build_kms67.sh
 RUN /bin/bash /app/build_kms67.sh
 
-COPY ./clean_after_build_kms67.sh /app/clean_after_build_kms67.sh
-RUN chmod +x /app/clean_after_build_kms67.sh
-RUN /bin/bash /app/clean_after_build_kms67.sh
+# have something wrong,after clean,so skip this step .error msg:
+# kurento-media-server/server/kurento-media-server: error while loading shared libraries: libboost_program_options.so.1.58.0: cannot open shared object file: No such file or directory
+
+#COPY ./clean_after_build_kms67.sh /app/clean_after_build_kms67.sh
+#RUN chmod +x /app/clean_after_build_kms67.sh
+#RUN /bin/bash /app/clean_after_build_kms67.sh
 
 
 COPY ./launch_kms67.sh /app/launch_kms67.sh

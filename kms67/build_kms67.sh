@@ -10,8 +10,17 @@ REF=master
 for d in $(find . -maxdepth 1 -mindepth 1 -type d)
 do pushd $d ; git checkout "$REF" ; popd ; done
 
+
+
 cd /app/kms-omni-build
 TYPE=Debug
+
+#create directory build-$TYPE
+if test -d build-$TYPE
+then
+    rm -rf build-$TYPE
+fi
+
 mkdir build-$TYPE \
   && cd build-$TYPE \
   && cmake -DCMAKE_BUILD_TYPE=$TYPE -DCMAKE_VERBOSE_MAKEFILE=ON .. \
