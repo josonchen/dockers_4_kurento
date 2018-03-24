@@ -8,6 +8,7 @@ cd /app/web_apps/kurento-tutorial-java/kurento-magic-mirror
 
 git checkout 6.7.1
 
+# compiled ,after create the docker
 mvn compile 
 
 # mvn compile exec:java

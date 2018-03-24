@@ -17,8 +17,12 @@ RUN /bin/bash /app/web_apps/mirror/build_mirror.sh
 
 EXPOSE 8443
 
+
 WORKDIR  /app/web_apps/kurento-tutorial-java/kurento-magic-mirror
-ENTRYPOINT ["mvn", "exec:java"]
+# only run ,compile completed in /app/web_apps/mirror/build_mirror.sh
+#ENTRYPOINT ["mvn","compile","exec:java"]
+ENTRYPOINT ["mvn","exec:java"]
+
 # docker run -d -p 8443:8443 --name mirror --restart=always registry.cn-hangzhou.aliyuncs.com/joson/mirror -Dkms.url=ws://192.168.2.90:8008/kurento -Dapp.server.url=https://192.168.2.90:8443
 
 # cd /app/web_apps/kurento-tutorial-java/kurento-magic-mirror
