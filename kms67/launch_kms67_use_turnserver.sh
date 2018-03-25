@@ -4,23 +4,32 @@ if [ $# -ge 3 ] ; then
 	echo $1
 	echo $2
 	echo $3
+
 	stunServerAddress=$1
 	stunServerPort=$2
 	turnURL=$3
+
+	echo $stunServerAddress
+	echo $stunServerPort
+	echo $turnURL
+
 	# backup the original ini file
-	if [ -f /etc/kurento/modules/kurento/WebRtcEndpoint.conf.ini_original ]
+	if [ ! -f /etc/kurento/modules/kurento/WebRtcEndpoint.conf.ini_original ]
 	then
-	    cp /etc/kurento/modules/kurento/WebRtcEndpoint.conf.ini /etc/kurento/modules/kurento/WebRtcEndpoint.conf.ini_original
+	    cp /etc/kurento/modules/kurento/WebRtcEndpoint.conf.ini  /etc/kurento/modules/kurento/WebRtcEndpoint.conf.ini_original
 	fi
-	echo \"
-		stunServerAddress=\"$stunServerAddress\"
-		stunServerPort=\"$stunServerPort\"
-		turnURL=\"$turnURL\"	\" | tee /etc/kurento/modules/kurento/WebRtcEndpoint.conf.ini
+
+	echo "
+		stunServerAddress="$stunServerAddress"
+		stunServerPort="$stunServerPort"
+		turnURL="$turnURL"	" | tee /etc/kurento/modules/kurento/WebRtcEndpoint.conf.ini
+
     #exit 1; 
-    echo \"
-		stunServerAddress=\"$stunServerAddress\"
-		stunServerPort=\"$stunServerPort\"
-		turnURL=\"$turnURL\"	\"
+	echo "
+		stunServerAddress="$stunServerAddress"
+		stunServerPort="$stunServerPort"
+		turnURL="$turnURL"	" 
+
 fi
 
 export GST_DEBUG='3,Kurento*:4,kms*:4,rtpendpoint:4,webrtcendpoint:4'
