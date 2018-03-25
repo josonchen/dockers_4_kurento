@@ -2,7 +2,9 @@
 
 cd /app/web_apps
 
-git clone https://github.com/Kurento/kurento-tutorial-java.git
+git clone -b  hiphop https://github.com/josonchen/kurento-tutorial-java.git
+
+# git clone https://github.com/Kurento/kurento-tutorial-java.git
 
 cd /app/web_apps/kurento-tutorial-java/kurento-magic-mirror
 
