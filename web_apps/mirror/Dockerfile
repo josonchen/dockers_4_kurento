@@ -23,7 +23,7 @@ WORKDIR  /app/web_apps/kurento-tutorial-java/kurento-magic-mirror
 #ENTRYPOINT ["mvn","compile","exec:java"]
 ENTRYPOINT ["mvn","exec:java"]
 
-# 0.pre : docker ps -a
+# 0.pre   : docker ps -a 
 # 1.clean : docker stop f9e5eb9eb9d3 && docker rm f9e5eb9eb9d3 && docker rmi registry.cn-hangzhou.aliyuncs.com/joson/mirror && docker run -d -p 8443:8443 --name mirror --restart=always registry.cn-hangzhou.aliyuncs.com/joson/mirror -Dkms.url=ws://192.168.2.90:8008/kurento -Dapp.server.url=https://192.168.2.90:8443
 
 # docker run -d -p 8443:8443 --name mirror --restart=always registry.cn-hangzhou.aliyuncs.com/joson/mirror -Dkms.url=ws://192.168.2.90:8008/kurento -Dapp.server.url=https://192.168.2.90:8443
