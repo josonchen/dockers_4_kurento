@@ -1,9 +1,9 @@
 #launch_kms67_use_turnserver.sh
 # can process with or without parameter
 if [ $# -ge 3 ] ; then 
-	echo $1
-	echo $2
-	echo $3
+#	echo $1
+#	echo $2
+#	echo $3
 
 	stunServerAddress=$1
 	stunServerPort=$2
@@ -24,11 +24,11 @@ if [ $# -ge 3 ] ; then
 		stunServerPort="$stunServerPort"
 		turnURL="$turnURL"	" | tee /etc/kurento/modules/kurento/WebRtcEndpoint.conf.ini
 
-    #exit 1; 
-	echo "
-		stunServerAddress="$stunServerAddress"
-		stunServerPort="$stunServerPort"
-		turnURL="$turnURL"	" 
+#    #exit 1; 
+#	echo "
+#		stunServerAddress="$stunServerAddress"
+#		stunServerPort="$stunServerPort"
+#		turnURL="$turnURL"	" 
 
 fi
 
