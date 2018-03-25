@@ -15,9 +15,12 @@ if [ $# -ge 3 ] ; then
 	echo \"
 		stunServerAddress=\"$stunServerAddress\"
 		stunServerPort=\"$stunServerPort\"
-		turnURL=\"$turnURL\"
-	\"| tee /etc/kurento/modules/kurento/WebRtcEndpoint.conf.ini
-exit 1; 
+		turnURL=\"$turnURL\"	\" | tee /etc/kurento/modules/kurento/WebRtcEndpoint.conf.ini
+    #exit 1; 
+    echo \"
+		stunServerAddress=\"$stunServerAddress\"
+		stunServerPort=\"$stunServerPort\"
+		turnURL=\"$turnURL\"	\"
 fi
 
 export GST_DEBUG='3,Kurento*:4,kms*:4,rtpendpoint:4,webrtcendpoint:4'
